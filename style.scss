@@ -1,0 +1,333 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'RocknRoll One', sans-serif;
+
+    body {
+        width: 100vw;
+        text-align: center;
+        display: grid;
+        grid-template-rows: 40vh 10vh 100vh auto auto 43vh auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "bali"
+            "populaires"
+            "partenair"
+            "partenairicone"
+            "footer"
+        ;
+
+        header {
+            background-image: linear-gradient(rgba(43, 128, 185, 0.4), rgba(242, 247, 186, 0.5)), url("./images/beach.jpg");
+            grid-area: header;
+            background-position: center;
+            background-size: cover;
+            grid-template-rows: 1fr auto 1fr;
+            display: grid;
+
+            #centre {
+                grid-row-start: 2;
+            }
+
+            .far {
+                font-size: 2em;
+            }
+        }
+
+        nav {
+            background-color: #f2f7ba;
+            grid-area: nav;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            ul {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 80vw;
+
+                li {
+                    color: #2d7eb8
+                }
+            }
+        }
+
+        .btn {
+            background: #f2f8ba;
+            border: 2px solid white;
+            color: #2d7eb8;
+            border-radius: 5px;
+            font-size: 1.2em;
+            height: 2em;
+            transition: all 1s;
+
+        }
+
+        .btn:hover {
+            background: #2d7eb8;
+            color: #f2f8ba;
+            transition: all 1s;
+
+        }
+
+        .txtbleu {
+            color: #2d7eb8;
+        }
+
+        .txtblanc {
+            color: white;
+        }
+
+        .txtnoire {
+            color: black;
+            width: 50vw;
+            margin: auto;
+        }
+
+        .roundIMG {
+            border-radius: 50%;
+            width: 20%;
+        }
+
+        h2:after {
+            display: block;
+            height: 2px;
+            background-color: #f2f8ba;
+            width: 200px;
+            content: " ";
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        .fas {
+            font-size: 2em;
+            padding-top: 30px;
+        }
+
+        #bali {
+            grid-area: bali;
+            background-image: linear-gradient(rgba(242, 247, 186, 0.0), rgba(43, 128, 185, 0.4)), url("./images/bali.jpg");
+            width: 100vw;
+            height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            display: grid;
+            grid-template-columns: 1fr auto 10fr;
+            grid-template-rows: 8fr auto 1fr;
+
+            #flex {
+                display: flex;
+                align-self: center;
+                justify-content: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            #bloquebali {
+                background-color: #2d7eb8;
+                border-radius: 25px;
+                height: auto;
+                width: 20vw;
+                grid-column-start: 2;
+                grid-row-start: 2;
+
+            }
+        }
+
+        #populaires {
+            grid-area: populaires;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+
+            #gauche {
+                grid-column-start: 1;
+                background-color: #2b80b9;
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                grid-template-rows: 150px 1fr 1fr 1fr 1fr 1fr 100px;
+
+                .c2 {
+                    grid-column-start: 2;
+                }
+
+                .bloquePopulaire {
+                    border: 2px solid #f2f8ba;
+                    border-radius: 25px;
+                    box-shadow: 2px 4px #f2f8ba;
+                    width: 25vw;
+                    height: auto;
+                    grid-column-start: 2;
+                    display: grid;
+                    grid-template-columns: 1fr 4fr 1fr;
+
+                    .poseC2 {
+                        grid-column-start: 2;
+                        .flex {
+                            .fa-star{font-size: 1em;}
+                            font-size: 0.7em;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            text-align: center;
+                        }
+                    }
+
+                    .img {
+                        width: 15vw;
+                        height: 20vh;
+                        border: 3px solid white;
+                        filter: grayscale(40%);
+                        transition: all 0.5s;
+                    }
+                    .img:hover{
+                        filter: grayscale(0%);
+                        transition: all 0.5s;
+                    }
+                }
+            }
+
+            #droite {
+                grid-column-start: 2;
+                background-color: white;
+
+                .boxArticl {
+                    #dernier_A {
+                        display: grid;
+                        grid-template-columns: 3fr 3fr 1fr 3fr 1fr 3fr 3fr;
+
+                        #article1 {
+                            grid-column-start: 2;
+                        }
+
+                        #article2 {
+                            grid-column-start: 4;
+                        }
+
+                        #article3 {
+                            grid-column-start: 6;
+                        }
+
+                        img {
+                            width: 15vw;
+                            height: 20vh;
+                            filter: grayscale(30%);
+                            transition: all 0.5s;
+                        }
+                        img:hover{
+                            filter: grayscale(0%);
+                            transition: all 0.5s;
+                        }
+                    }
+                    .roundIMG{
+                        width: 2.5em;
+                    }
+                    .gridarticle {
+                        grid-template-columns: 2fr 3fr 2fr;
+
+                        .articleImg {
+                            grid-column-start: 2;
+                            height: 40vh;
+                            width: 40vw;
+                            border: 3px solid #f2f8ba;
+                            filter: grayscale(40%);
+                            transition: all 0.5s;
+                        }
+                        .articleImg:hover{
+                            filter: grayscale(0%);
+                            transition: all 0.5s;
+                        }
+                    }
+                }
+
+                .boxArticl::after {
+                    display: block;
+                    height: 2px;
+                    background-color: #2d7eb8;
+                    width: 50vw;
+                    content: " ";
+                    margin: 0 auto;
+                }
+
+                padding-bottom: 3px;
+            }
+        }
+
+        #partenair {
+            grid-area: partenair;
+            background-image: linear-gradient(rgba(43, 128, 185, 0), rgba(242, 247, 186, 0.8)), url("./images/plane.jpg");
+            width: 100vw;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+        }
+
+        #partenairicone {
+            grid-area: partenairicone;
+
+            padding-top: 10px;
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr 3fr 1fr 3fr 1fr;
+            background-color: #2b80b9;
+            color: white;
+            text-align: center;
+ 
+            .taileimg {
+                width: 15em;
+                height: 15em;
+                transition: transform .2s;
+            }
+            .taileimg:hover {
+                transform: scale(1.1);
+
+                
+            }
+            #Airlines {
+                grid-column-start: 2;
+            }
+
+            #Company {
+                grid-column-start: 4;
+            }
+
+            #Masters {
+                grid-column-start: 6;
+            }
+        }
+    }
+
+    footer {
+        grid-area: footer;
+        background-color: #f2f8ba;
+        text-align: center;
+        height: 10vh;
+        display: grid;
+        grid-template-rows: 1fr auto auto 1fr;
+
+        #textfooter {
+            grid-row-start: 2;
+        }
+
+        #texticon {
+            grid-row-start: 3;
+            font-size: 2em;
+
+        }
+        .fab{
+            transition: all 0.5s;
+        }
+        .fab:hover {
+            font-size: 111%;
+            color: white;
+            transition: all 0.5s;
+
+        }
+    }
+}
