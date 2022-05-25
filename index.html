@@ -16,13 +16,17 @@
             <p class="txtblanc">racontez-nous vos plus beaux souvenir</p>
         </div>
     </header>
-    <nav>
-        <ul>
-            <li>Destinations</li>
-            <li>Itinéraires et circuits</li>
-            <li>Top 10 articles</li>
-            <li>Poster un article</li>
-        </ul>
+    <nav id="navBar">
+        <div id="hamburgerAndTitle">
+            <i id="hamburger" class="fas fa-bars fa-2x"></i>
+            <h2 id="navbarTitle"><i class="far fa-compass"></i>travelblog.com</h2>
+        </div>
+        <div id="navigationLinks">
+            <a href="index.html">Destinations</a>
+            <a href="index.html">Itinéraires et circuits</a>
+            <a href="index.html">Top 10 articles</a>
+            <a href="index.html">Poster un article</a>
+        </div>
     </nav>
     <section id="bali">
         <div id="bloquebali">
@@ -225,6 +229,32 @@
         <p id="textfooter">© 2021 travelingblog.com</p>
         <p id="texticon"><i class="fab fa-facebook-square"></i> <i class="fab fa-twitter"></i> <i class="fab fa-linkedin"></i> <i class="fab fa-instagram"></i></p>
     </footer>
+    <!-- *** Code JavaScript pour afficher le menu en cliquant sur l'icône hamburger (en téléphone et tablette) ** -->
+    <script type="text/javascript">
+        window.onload = function () {
+
+            let hamburger = document.getElementById('hamburger');
+            let links = document.getElementById('navigationLinks');
+            // au clic sur hamburger, afficher ou masquer le menu (en responsive)
+            hamburger.onclick = function () {
+                if (links.style.display == 'none') {
+                    links.style.display = 'block';
+                    links.style.display = 'grid';
+                } else {
+                    links.style.display = 'none';
+                }
+            };
+
+            // afficher le menu quand on passe en taille desktop (même s'il est masqué)
+            window.addEventListener('resize', () => {
+                let width = window.innerWidth;
+                if (width > 1080) {
+                    links.style.display = 'block';
+                    links.style.display = 'grid';
+                }
+            });
+        };
+    </script>
 </body>
 
 </html>
