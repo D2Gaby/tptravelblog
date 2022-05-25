@@ -9,7 +9,7 @@
         width: 100vw;
         text-align: center;
         display: grid;
-        grid-template-rows: 40vh 10vh 100vh auto auto 43vh auto;
+        grid-template-rows: 40vh 10vh 100vh auto auto 35vh auto;
         grid-template-columns: 1fr;
         grid-template-areas:
             "header"
@@ -72,6 +72,7 @@
             font-size: 1.2em;
             height: 2em;
             transition: all 1s;
+            margin: 10px;
 
         }
 
@@ -292,7 +293,7 @@
             grid-area: partenair;
             background-image: linear-gradient(rgba(43, 128, 185, 0), rgba(242, 247, 186, 0.8)), url("./images/plane.jpg");
             width: 100vw;
-            height: auto;
+            height: 100vh;
             background-position: center;
             background-size: cover;
         }
@@ -364,6 +365,10 @@
     }
 }
 
+//*****************************************************************************
+// media
+//*****************************************************************************************
+
 @media screen and (max-width: 991px) {
     body {
         nav {
@@ -414,9 +419,13 @@
     }
 }
 
+//****************************************************************************************************
+// tablette
+//***************************************************************************************************************
+
 @media screen and (min-width:768px) and (max-width:991px) {
     body {
-        grid-template-rows: 40vh 0vh 100vh auto auto 43vh auto;
+        grid-template-rows: 40vh 0vh 100vh auto auto 35vh auto;
 
         #bali {
             grid-template-columns: 1fr auto 6fr;
@@ -484,13 +493,20 @@
     }
 }
 
+//****************************************************************************************************
+// tél
+//***************************************************************************************************************
+
 @media screen and (max-width:767px) {
     body {
-        grid-template-rows: 40vh 0vh 100vh auto auto 43vh auto;
-
+        grid-template-rows: 40vh 0vh 100vh auto 50vh 90vh auto;
+        .txtnoire {
+            color: black;
+            width: 70vw;
+            margin: auto;
+        }
         nav {
             #navigationLinks {
-
                 display: flex;
                 flex-direction: column;
             }
@@ -502,7 +518,7 @@
 
             #bloquebali {
                 height: auto;
-                width: 20vw;
+                width: 50vw;
                 grid-column-start: 2;
                 grid-row-start: 2;
 
@@ -515,13 +531,14 @@
 
             #gauche {
                 grid-column: 1;
+                grid-row-start: 2;
 
                 .bloquePopulaire {
                     text-align: center;
-                    width: 45vw;
+                    width: 80vw;
 
                     .img {
-                        width: 30vw;
+                        width: 50vw;
                         height: auto;
                     }
                 }
@@ -529,6 +546,7 @@
 
             #droite {
                 grid-column: 1;
+                grid-row-start: 1;
 
                 .boxArticl {
 
@@ -550,15 +568,96 @@
                         }
 
                         img {
-                            width: 25vw;
+                            width: 60vw;
                             margin-bottom: 10px;
                             margin-left: auto;
                             margin-right: auto;
                         }
                     }
+
+                    .gridarticle {
+                        grid-template-columns: 1fr 8fr 1fr;
+
+                        .articleImg {
+                            width: 60vw;
+                        }
+                    }
                 }
             }
         }
-    }
+        #partenairicone {
+            grid-area: partenairicone;
+            padding-top: 10px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            #Airlines {
+                grid-column-start: 1;
+                height: auto;
+            }
 
+            #Company {
+                grid-column-start: 1;
+            }
+
+            #Masters {
+                grid-column-start: 1;
+            }
+        }
+    }
 }
+/*
+ 	
+
+                             ...----....
+                         ..-:"''         ''"-..
+                      .-'                      '-.
+                    .'              .     .       '.
+                  .'   .          .    .      .    .''.
+                .'  .    .       .   .   .     .   . ..:.
+              .' .   . .  .       .   .   ..  .   . ....::.
+             ..   .   .      .  .    .     .  ..  . ....:IA.
+            .:  .   .    .    .  .  .    .. .  .. .. ....:IA.
+           .: .   .   ..   .    .     . . .. . ... ....:.:VHA.
+           '..  .  .. .   .       .  . .. . .. . .....:.::IHHB.
+          .:. .  . .  . .   .  .  . . . ...:.:... .......:HIHMM.
+         .:.... .   . ."::"'.. .   .  . .:.:.:II;,. .. ..:IHIMMA
+         ':.:..  ..::IHHHHHI::. . .  ...:.::::.,,,. . ....VIMMHM
+        .:::I. .AHHHHHHHHHHAI::. .:...,:IIHHHHHHMMMHHL:. . VMMMM
+       .:.:V.:IVHHHHHHHMHMHHH::..:" .:HIHHHHHHHHHHHHHMHHA. .VMMM.
+       :..V.:IVHHHHHMMHHHHHHHB... . .:VPHHMHHHMMHHHHHHHHHAI.:VMMI
+       ::V..:VIHHHHHHMMMHHHHHH. .   .I":IIMHHMMHHHHHHHHHHHAPI:WMM
+       ::". .:.HHHHHHHHMMHHHHHI.  . .:..I:MHMMHHHHHHHHHMHV:':H:WM
+       :: . :.::IIHHHHHHMMHHHHV  .ABA.:.:IMHMHMMMHMHHHHV:'. .IHWW
+       '.  ..:..:.:IHHHHHMMHV" .AVMHMA.:.'VHMMMMHHHHHV:' .  :IHWV
+        :.  .:...:".:.:TPP"   .AVMMHMMA.:. "VMMHHHP.:... .. :IVAI
+       .:.   '... .:"'   .   ..HMMMHMMMA::. ."VHHI:::....  .:IHW'
+       ...  .  . ..:IIPPIH: ..HMMMI.MMMV:I:.  .:ILLH:.. ...:I:IM
+     : .   .'"' .:.V". .. .  :HMMM:IMMMI::I. ..:HHIIPPHI::'.P:HM.
+     :.  .  .  .. ..:.. .    :AMMM IMMMM..:...:IV":T::I::.".:IHIMA
+     'V:.. .. . .. .  .  .   'VMMV..VMMV :....:V:.:..:....::IHHHMH
+       "IHH:.II:.. .:. .  . . . " :HB"" . . ..PI:.::.:::..:IHHMMV"
+        :IP""HHII:.  .  .    . . .'V:. . . ..:IH:.:.::IHIHHMMMMM"
+        :V:. VIMA:I..  .     .  . .. . .  .:.I:I:..:IHHHHMMHHMMM
+        :"VI:.VWMA::. .:      .   .. .:. ..:.I::.:IVHHHMMMHMMMMI
+        :."VIIHHMMA:.  .   .   .:  .:.. . .:.II:I:AMMMMMMHMMMMMI
+        :..VIHIHMMMI...::.,:.,:!"I:!"I!"I!"V:AI:VAMMMMMMHMMMMMM'
+        ':.:HIHIMHHA:"!!"I.:AXXXVVXXXXXXXA:."HPHIMMMMHHMHMMMMMV
+          V:H:I:MA:W'I :AXXXIXII:IIIISSSSSSXXA.I.VMMMHMHMMMMMM
+            'I::IVA ASSSSXSSSSBBSBMBSSSSSSBBMMMBS.VVMMHIMM'"'
+             I:: VPAIMSSSSSSSSSBSSSMMBSSSBBMMMMXXI:MMHIMMI
+            .I::. "H:XIIXBBMMMMMMMMMMMMMMMMMBXIXXMMPHIIMM'
+            :::I.  ':XSSXXIIIIXSSBMBSSXXXIIIXXSMMAMI:.IMM
+            :::I:.  .VSSSSSISISISSSBII:ISSSSBMMB:MI:..:MM
+            ::.I:.  ':"SSSSSSSISISSXIIXSSSSBMMB:AHI:..MMM.
+            ::.I:. . ..:"BBSSSSSSSSSSSSBBBMMMB:AHHI::.HMMI
+            :..::.  . ..::":BBBBBSSBBBMMMB:MMMMHHII::IHHMI
+            ':.I:... ....:IHHHHHMMMMMMMMMMMMMMMHHIIIIHMMV"
+              "V:. ..:...:.IHHHMMMMMMMMMMMMMMMMHHHMHHMHP'
+               ':. .:::.:.::III::IHHHHMMMMMHMHMMHHHHM"
+                 "::....::.:::..:..::IIIIIHHHHMMMHHMV"
+                   "::.::.. .. .  ...:::IIHHMMMMHMV"
+                     "V::... . .I::IHHMMV"'
+                       '"VHVHHHAHHHHMMV:"'
+
+*/
